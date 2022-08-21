@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>foo</li>
+        <li>bar</li>
+        <li>bar</li>
+    </ul>
+
+    <script>
+        // retrieve element using querySelectorAll
+        const listItems_querySelector = document.querySelectorAll('li');
+        console.log('querySelector', listItems_querySelector);
+
+        // retrieve element using childNodes
+        const list = document.querySelector('ul')
+        const listItems_childNodes = list.childNodes;
+        console.log('childNodes', listItems_childNodes);
+        const listItems_children = list.children;
+        console.log('children', listItems_children);
+
+        const listItems_getElementsByTagName = document.getElementsByTagName('li');
+        console.log('getElementsByTagName', listItems_getElementsByTagName);
+
+        console.log('*************************');
+        console.log('add one list item');
+        console.log('*************************');
+        list.appendChild(document.createElement('li'));
+
+        console.log('querySelector', listItems_querySelector);
+        console.log('childNodes', listItems_childNodes);
+        console.log('children', listItems_children);
+        console.log('getElementsByTagName', listItems_getElementsByTagName);
+
+        console.log('*************************');
+        console.log('add one more list item');
+        console.log('*************************');
+        listItems_getElementsByTagName[0].parentNode.appendChild(document.createElement('li'));
+
+        console.log('querySelector', listItems_querySelector);
+        console.log('childNodes', listItems_childNodes);
+        console.log('children', listItems_children);
+        console.log('getElementsByTagName', listItems_getElementsByTagName);</script>
+
+</body>
+
+</html>
